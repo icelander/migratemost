@@ -561,7 +561,7 @@ def migrate_team():
 
 def store_base64_image(data, path, filename):
     try:
-        decoded = base64.b64decode(data)
+        decoded = base64.b64decode(data + "===")
     except TypeError as e:
         logger.error("Failed to decode base 64 data (%s): %s" % (str(e), data))
         return ''
